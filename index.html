@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Service Booking</title>
+    <title>Service Booking Demo</title>
     <style>
         /* Basic styling */
         body {
@@ -87,17 +87,6 @@
             width: 100%; /* Span the entire width of the viewport */
             left: 0; /* Align left */
         }
-
-        .about-section {
-            text-align: center;
-            padding: 50px 20px;
-            margin-top: 100px; /* Adjust margin to account for fixed header */
-        }
-
-        .about-text {
-            font-size: 1.2em;
-            line-height: 1.8;
-        }
     </style>
 </head>
 <body>
@@ -111,7 +100,6 @@
             </ul>
         </nav>
     </header>
-
     <section class="hero">
         <div class="slideshow-container">
             <div class="mySlides">
@@ -126,17 +114,31 @@
             <!-- Add more images as needed -->
         </div>
     </section>
-
-    <section class="about-section">
-        <div class="about-text">
-            <p>Welcome to our service booking platform, where finding reliable services is as easy as a few clicks. Similar to Uber Eats, our website offers a seamless experience for booking various services such as <strong>electricians</strong>, <strong>plumbers</strong>, <strong>dog walkers</strong>, and more. You can browse through available services, search for specific needs, and view detailed profiles of service providers, including their locations, availability, and customer reviews.</p>
-
-            <p>Once you find the right service provider, simply request their service and receive a quote promptly. Our platform is designed to connect you with trustworthy professionals efficiently, ensuring your needs are met with convenience and reliability.</p>
-        </div>
-    </section>
-
     <footer>
         <p>&copy; 2024 Your Company. All rights reserved.</p>
     </footer>
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var slides = document.querySelectorAll('.mySlides');
+
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';  // Hide all slides
+            }
+
+            slideIndex++;
+
+            if (slideIndex > slides.length) {
+                slideIndex = 1;  // Reset to the first slide after the last one
+            }
+
+            slides[slideIndex - 1].style.display = 'block';  // Display the current slide
+
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
 </body>
 </html>
