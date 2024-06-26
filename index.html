@@ -51,29 +51,33 @@
 
         .hero {
             background-color: #f4f4f4; /* Light grey background for the hero section */
-            padding: 50px 0;
+            padding: 0;
             text-align: center;
             margin-top: 80px; /* Adjust margin to account for fixed header */
-        }
-
-        .slideshow-container {
-            max-width: 100%;
-            position: relative;
-            margin-top: 10px; /* Add some top margin */
             overflow: hidden; /* Hide overflow to prevent horizontal scrollbar */
         }
 
-        .mySlides {
-            display: none; /* Initially hide all slides */
-            max-width: 100%; /* Ensure slides fill container */
-            height: 300px;
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            overflow: hidden;
         }
 
-        .mySlides img {
-            max-width: 100%; /* Ensure images fill their container */
-            height: auto;
-            display: block; /* Ensure images display correctly */
-            margin: auto; /* Center align images */
+        .mySlides {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the image covers the entire container */
+        }
+
+        .slide-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 2em;
         }
 
         footer {
@@ -105,22 +109,27 @@
         <div class="slideshow-container">
             <div class="mySlides">
                 <img src="electrician.jpg" alt="Electrician Service">
+                <div class="slide-text">
+                    <p>Discover reliable services at your fingertips. Browse through electricians, plumbers, dog walkers, and more.</p>
+                    <p>Easy to use and convenient. Start booking today!</p>
+                </div>
             </div>
             <div class="mySlides">
                 <img src="plumbing.jpg" alt="Plumbing Service">
+                <div class="slide-text">
+                    <p>Professional plumbing services tailored to your needs.</p>
+                    <p>Book now and solve your plumbing issues with ease.</p>
+                </div>
             </div>
             <div class="mySlides">
                 <img src="dog-walking.jpg" alt="Dog Walking Service">
+                <div class="slide-text">
+                    <p>Need a reliable dog walker? Find the best in your area.</p>
+                    <p>Book a dog walking service today!</p>
+                </div>
             </div>
             <!-- Add more images as needed -->
         </div>
-        <section class="services-overview">
-        <div class="overview-text">
-            <p>Discover reliable services at your fingertips. Browse through electricians, plumbers, dog walkers, and more.</p>
-            <p>Easy to use and convenient. Start booking today!</p>
-            <!-- Optional: Call to action button -->
-        </div>
-        </section>
     </section>
     <footer>
         <p>&copy; 2024 Your Company. All rights reserved.</p>
@@ -145,7 +154,7 @@
 
             slides[slideIndex - 1].style.display = 'block';  // Display the current slide
 
-            setTimeout(showSlides, 2000); // Change image every 2 seconds
+            setTimeout(showSlides, 4000); // Change image every 4 seconds
         }
     </script>
 </body>
