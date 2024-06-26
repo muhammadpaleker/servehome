@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Booking Demo</title>
+    <title>About - Service Booking</title>
     <style>
         /* Basic styling */
         body {
@@ -49,31 +49,15 @@
             font-size: 1.2em; /* Adjust font size */
         }
 
-        .hero {
-            background-color: #f4f4f4; /* Light grey background for the hero section */
-            padding: 50px 0;
+        .about-section {
             text-align: center;
-            margin-top: 80px; /* Adjust margin to account for fixed header */
+            padding: 50px 20px;
+            margin-top: 100px; /* Adjust margin to account for fixed header */
         }
 
-        .slideshow-container {
-            max-width: 100%;
-            position: relative;
-            margin-top: 20px; /* Add some top margin */
-            overflow: hidden; /* Hide overflow to prevent horizontal scrollbar */
-        }
-
-        .mySlides {
-            display: none; /* Initially hide all slides */
-            max-width: 100%; /* Ensure slides fill container */
-            height: auto;
-        }
-
-        .mySlides img {
-            max-width: 100%; /* Ensure images fill their container */
-            height: auto;
-            display: block; /* Ensure images display correctly */
-            margin: auto; /* Center align images */
+        .about-text {
+            font-size: 1.2em;
+            line-height: 1.8;
         }
 
         footer {
@@ -100,45 +84,17 @@
             </ul>
         </nav>
     </header>
-    <section class="hero">
-        <div class="slideshow-container">
-            <div class="mySlides">
-                <img src="electrician.jpg" alt="Electrician Service">
-            </div>
-            <div class="mySlides">
-                <img src="plumbing.jpg" alt="Plumbing Service">
-            </div>
-            <div class="mySlides">
-                <img src="dog-walking.jpg" alt="Dog Walking Service">
-            </div>
-            <!-- Add more images as needed -->
+
+    <section class="about-section">
+        <div class="about-text">
+            <p>Welcome to our service booking platform, where finding reliable services is as easy as a few clicks. Similar to Uber Eats, our website offers a seamless experience for booking various services such as <strong>electricians</strong>, <strong>plumbers</strong>, <strong>dog walkers</strong>, and more. You can browse through available services, search for specific needs, and view detailed profiles of service providers, including their locations, availability, and customer reviews.</p>
+
+            <p>Once you find the right service provider, simply request their service and receive a quote promptly. Our platform is designed to connect you with trustworthy professionals efficiently, ensuring your needs are met with convenience and reliability.</p>
         </div>
     </section>
+
     <footer>
         <p>&copy; 2024 Your Company. All rights reserved.</p>
     </footer>
-
-    <script>
-        var slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            var slides = document.querySelectorAll('.mySlides');
-
-            for (var i = 0; i < slides.length; i++) {
-                slides[i].style.display = 'none';  // Hide all slides
-            }
-
-            slideIndex++;
-
-            if (slideIndex > slides.length) {
-                slideIndex = 1;  // Reset to the first slide after the last one
-            }
-
-            slides[slideIndex - 1].style.display = 'block';  // Display the current slide
-
-            setTimeout(showSlides, 2000); // Change image every 2 seconds
-        }
-    </script>
 </body>
 </html>
