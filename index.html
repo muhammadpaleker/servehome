@@ -18,14 +18,14 @@
         header {
             background-color: #000; /* Black header background */
             color: #fff; /* White text color */
-            padding: 0.79in 0; /* 2cm (0.79 inches) height for the header */
+            padding: 20px 0; /* Padding based on text size */
             width: 100%; /* Span the entire width of the page */
             text-align: center; /* Center align text */
         }
 
         header h1 {
             font-size: 1.5em; /* Adjust font size */
-            margin-top: 20px; /* Add some top margin */
+            margin: 0; /* Remove default margin */
         }
 
         .hero {
@@ -34,25 +34,24 @@
             text-align: center;
         }
 
-        .container {
-            width: 80%;
-            margin: auto;
-        }
-
         .slideshow-container {
             max-width: 100%;
             position: relative;
             margin-top: 20px; /* Add some top margin */
+            overflow: hidden; /* Hide overflow to prevent horizontal scrollbar */
         }
 
         .mySlides {
-            display: none;
+            display: inline-block; /* Display images inline */
+            width: 100%; /* Full width for each slide */
+            transition: transform 1s ease; /* Smooth transition effect */
+            white-space: nowrap; /* Prevent line breaks */
         }
 
-        .slideshow-container img {
+        .mySlides img {
             max-width: 100%;
             height: auto;
-            margin: auto;
+            vertical-align: middle;
         }
 
         footer {
@@ -60,9 +59,6 @@
             padding: 10px 0;
             background-color: #333; /* Dark grey background for the footer */
             color: #fff; /* White text color */
-            position: fixed;
-            bottom: 0;
-            width: 100%;
         }
     </style>
 </head>
@@ -78,17 +74,11 @@
         </nav>
     </header>
     <section class="hero">
-        <div class="container">
-            <div class="slideshow-container">
-                <div class="mySlides">
-                    <img src="electrician.jpg" alt="Electrician Service">
-                </div>
-                <div class="mySlides">
-                    <img src="plumbing.jpg" alt="Plumbing Service">
-                </div>
-                <div class="mySlides">
-                    <img src="dog-walking.jpg" alt="Dog Walking Service">
-                </div>
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="electrician.jpg" alt="Electrician Service">
+                <img src="plumbing.jpg" alt="Plumbing Service">
+                <img src="dog-walking.jpg" alt="Dog Walking Service">
                 <!-- Add more images as needed -->
             </div>
         </div>
@@ -102,14 +92,17 @@
         showSlides();
 
         function showSlides() {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
+            var slides = document.querySelector('.mySlides');
+            var slideWidth = slides.clientWidth;
+            var totalWidth = slides.scrollWidth;
+
+            if (slideIndex >= totalWidth) {
+                slideIndex = 0;
             }
+
+            slides.style.transform = `translateX(-${slideIndex}px)`;
+
             slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            slides[slideIndex - 1].style.display = "block";
             setTimeout(showSlides, 2000); // Change image every 2 seconds
         }
     </script>
