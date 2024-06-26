@@ -41,17 +41,11 @@
             overflow: hidden; /* Hide overflow to prevent horizontal scrollbar */
         }
 
-        .mySlides {
-            display: inline-block; /* Display images inline */
-            width: 100%; /* Full width for each slide */
-            transition: transform 1s ease; /* Smooth transition effect */
-            white-space: nowrap; /* Prevent line breaks */
-        }
-
         .mySlides img {
             max-width: 100%;
             height: auto;
-            vertical-align: middle;
+            display: block; /* Ensure images display correctly */
+            margin: auto; /* Center align images */
         }
 
         footer {
@@ -77,9 +71,6 @@
         <div class="slideshow-container">
             <div class="mySlides">
                 <img src="electrician.jpg" alt="Electrician Service">
-                <img src="plumbing.jpg" alt="Plumbing Service">
-                <img src="dog-walking.jpg" alt="Dog Walking Service">
-                <!-- Add more images as needed -->
             </div>
         </div>
     </section>
@@ -93,16 +84,19 @@
 
         function showSlides() {
             var slides = document.querySelector('.mySlides');
-            var slideWidth = slides.clientWidth;
-            var totalWidth = slides.scrollWidth;
+            var images = slides.querySelectorAll('img');
 
-            if (slideIndex >= totalWidth) {
+            if (slideIndex >= images.length) {
                 slideIndex = 0;
             }
 
-            slides.style.transform = `translateX(-${slideIndex}px)`;
+            for (var i = 0; i < images.length; i++) {
+                images[i].style.display = 'none';
+            }
 
+            images[slideIndex].style.display = 'block';
             slideIndex++;
+
             setTimeout(showSlides, 2000); // Change image every 2 seconds
         }
     </script>
