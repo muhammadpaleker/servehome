@@ -41,8 +41,14 @@
             overflow: hidden; /* Hide overflow to prevent horizontal scrollbar */
         }
 
+        .mySlides {
+            display: none; /* Initially hide all slides */
+            max-width: 100%; /* Ensure slides fill container */
+            height: auto;
+        }
+
         .mySlides img {
-            max-width: 100%;
+            max-width: 100%; /* Ensure images fill their container */
             height: auto;
             display: block; /* Ensure images display correctly */
             margin: auto; /* Center align images */
@@ -72,6 +78,13 @@
             <div class="mySlides">
                 <img src="electrician.jpg" alt="Electrician Service">
             </div>
+            <div class="mySlides">
+                <img src="plumbing.jpg" alt="Plumbing Service">
+            </div>
+            <div class="mySlides">
+                <img src="dog-walking.jpg" alt="Dog Walking Service">
+            </div>
+            <!-- Add more images as needed -->
         </div>
     </section>
     <footer>
@@ -83,19 +96,19 @@
         showSlides();
 
         function showSlides() {
-            var slides = document.querySelector('.mySlides');
-            var images = slides.querySelectorAll('img');
+            var slides = document.querySelectorAll('.mySlides');
 
-            if (slideIndex >= images.length) {
-                slideIndex = 0;
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';  // Hide all slides
             }
 
-            for (var i = 0; i < images.length; i++) {
-                images[i].style.display = 'none';
-            }
-
-            images[slideIndex].style.display = 'block';
             slideIndex++;
+
+            if (slideIndex > slides.length) {
+                slideIndex = 1;  // Reset to the first slide after the last one
+            }
+
+            slides[slideIndex - 1].style.display = 'block';  // Display the current slide
 
             setTimeout(showSlides, 2000); // Change image every 2 seconds
         }
