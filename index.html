@@ -18,30 +18,14 @@
         header {
             background-color: #000; /* Black header background */
             color: #fff; /* White text color */
-            padding: 3in 0; /* 3 inches height for the header */
+            padding: 0.79in 0; /* 2cm (0.79 inches) height for the header */
             width: 100%; /* Span the entire width of the page */
             text-align: center; /* Center align text */
         }
 
-        header nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        header nav ul li {
-            display: inline-block;
-            margin-right: 20px;
-        }
-
-        header nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px;
-        }
-
-        header nav ul li a:hover {
-            background: #555;
+        header h1 {
+            font-size: 1.5em; /* Adjust font size */
+            margin-top: 20px; /* Add some top margin */
         }
 
         .hero {
@@ -52,6 +36,22 @@
 
         .container {
             width: 80%;
+            margin: auto;
+        }
+
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin-top: 20px; /* Add some top margin */
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .slideshow-container img {
+            max-width: 100%;
+            height: auto;
             margin: auto;
         }
 
@@ -68,6 +68,7 @@
 </head>
 <body>
     <header>
+        <h1>Welcome to Service Booking</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -78,12 +79,39 @@
     </header>
     <section class="hero">
         <div class="container">
-            <h1>Welcome to Service Booking</h1>
-            <p>This is a demo website where you can book various services like electricians or plumbers.</p>
+            <div class="slideshow-container">
+                <div class="mySlides">
+                    <img src="electrician.jpg" alt="Electrician Service">
+                </div>
+                <div class="mySlides">
+                    <img src="plumbing.jpg" alt="Plumbing Service">
+                </div>
+                <div class="mySlides">
+                    <img src="dog-walking.jpg" alt="Dog Walking Service">
+                </div>
+                <!-- Add more images as needed -->
+            </div>
         </div>
     </section>
     <footer>
         <p>&copy; 2024 Your Company. All rights reserved.</p>
     </footer>
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
 </body>
 </html>
