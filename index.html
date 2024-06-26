@@ -21,6 +21,10 @@
             padding: 20px 0; /* Padding based on text size */
             width: 100%; /* Span the entire width of the page */
             text-align: center; /* Center align text */
+            position: fixed; /* Fixed position to stay on top */
+            z-index: 1000; /* Ensure header is above other content */
+            top: 0; /* Position at the top of the viewport */
+            left: 0; /* Align left */
         }
 
         header h1 {
@@ -32,6 +36,7 @@
             background-color: #f4f4f4; /* Light grey background for the hero section */
             padding: 50px 0;
             text-align: center;
+            margin-top: 80px; /* Adjust margin to account for fixed header */
         }
 
         .slideshow-container {
@@ -59,6 +64,11 @@
             padding: 10px 0;
             background-color: #333; /* Dark grey background for the footer */
             color: #fff; /* White text color */
+            position: fixed; /* Fixed position at the bottom */
+            z-index: 1000; /* Ensure footer is above other content */
+            bottom: 0; /* Position at the bottom of the viewport */
+            width: 100%; /* Span the entire width of the viewport */
+            left: 0; /* Align left */
         }
     </style>
 </head>
