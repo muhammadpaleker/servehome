@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Service Booking</title>
+    <title>Services | Service Booking Demo</title>
     <style>
-        /* Basic styling (use your existing CSS) */
+        /* Basic styling */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #fff; /* White background for the entire page */
-            color: #000; /* Black text color */
+            background-color: #f0f0f0; /* Light grey background */
+            color: #333; /* Dark text color */
             margin: 0;
             padding: 0;
-            padding-top: 80px; /* Adjust padding top to accommodate fixed header height */
-            padding-bottom: 60px; /* Adjust padding bottom to accommodate fixed footer height */
-            overflow-x: hidden; /* Hide horizontal scrollbar */
+            padding-bottom: 50px; /* Ensure content doesn't hide behind footer */
         }
 
         header {
-            background-color: #000; /* Black header background */
-            color: #fff; /* White text color */
+            background-color: #fff; /* White header background */
+            color: #333; /* Dark text color */
             padding: 20px 0; /* Padding based on text size */
             width: 100%; /* Span the entire width of the page */
             text-align: center; /* Center align text */
@@ -28,6 +26,7 @@
             z-index: 1000; /* Ensure header is above other content */
             top: 0; /* Position at the top of the viewport */
             left: 0; /* Align left */
+            border-bottom: 1px solid #ddd; /* Grey border bottom */
         }
 
         header h1 {
@@ -47,79 +46,63 @@
         }
 
         header nav ul li a {
-            color: #fff; /* White text color for links */
+            color: #333; /* Dark text color for links */
             text-decoration: none; /* Remove underline from links */
             font-size: 1.2em; /* Adjust font size */
         }
 
-        .services-section {
+        .search-bar {
+            max-width: 600px;
+            width: 100%;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .search-bar input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            font-size: 1.2em;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-bar input[type="text"]:focus {
+            border-color: #333;
+        }
+
+        .category-section {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 40px auto;
             padding: 40px 20px;
             text-align: center;
+            background-color: #fff; /* White background for categories */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            border-radius: 8px; /* Rounded corners */
         }
 
-        .search-section {
-            margin-bottom: 20px;
-            font-size: 0.75em; /* Half the font size of h2 */
-        }
-
-        .search-section label {
-            font-size: 1.5em; /* Same font size as h2 */
-            margin-right: 10px; /* Add space between label and input */
-        }
-
-        .search-section input[type="text"] {
-            padding: 5px; /* Adjust input padding */
-            width: 200px; /* Adjust input width */
-            font-size: 1em; /* Adjust font size */
-        }
-
-        .image-grid {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-top: 5px;
-        }
-
-        .image-item {
-            flex: 0 1 30%; /* Adjust width as needed */
-            margin-bottom: 20px;
+        .category {
+            display: inline-block;
+            margin: 0 10px;
             text-align: center;
-            cursor: pointer; /* Add pointer cursor for clickable items */
-            position: relative; /* Position relative for absolute positioning of text */
+            width: 30%; /* Adjust width as needed */
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            border-radius: 8px;
+            transition: transform 0.3s ease;
         }
 
-        .image-item img {
+        .category:hover {
+            transform: translateY(-5px); /* Lift up on hover */
+        }
+
+        .category img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .image-item p {
-            position: absolute; /* Position absolute for text positioning */
-            bottom: 10px; /* Adjust vertical positioning as needed */
-            left: 0;
-            right: 0;
-            color: #fff; /* Set text color to white */
-            font-size: 1.2em; /* Adjust font size */
-            font-weight: bold; /* Apply bold font weight */
-            margin: 0; /* Remove default margin */
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for contrast */
-            padding: 5px 10px; /* Adjust padding as needed */
-            text-align: center; /* Center align text */
-        }
-
-        .image-item:hover p {
-            background-color: rgba(0, 0, 0, 0.8); /* Darken background on hover */
-        }
-
-        .about-text {
-            font-size: 1.2em;
-            line-height: 1.8;
-            margin-bottom: 2px; /* Adjust margin bottom to reduce space */
+            margin-bottom: 10px;
         }
 
         footer {
@@ -148,52 +131,37 @@
         </nav>
     </header>
 
-    <section class="services-section">
-        <h2>Services</h2>
-        <div class="search-section">
-            <label for="service-search">Search:</label>
-            <input type="text" id="service-search" name="service-search" placeholder="Search for services...">
+    <div class="search-bar">
+        <input type="text" id="service-search" placeholder="Search for services...">
+    </div>
+
+    <section class="category-section">
+        <h2>Available Services</h2>
+        <div class="category">
+            <a href="electrician.html">
+                <img src="electrician.jpg" alt="Electrician Service">
+                <p>Electricians</p>
+            </a>
         </div>
-        
-        <div class="image-grid">
-            <!-- Service items (replace with actual links and images) -->
-            <div class="image-item">
-                <a href="electrician.html">
-                    <img src="electrician.jpg" alt="Electrician Service">
-                    <p>Electrician Service</p>
-                </a>
-            </div>
-            <div class="image-item">
-                <a href="plumbers.html">
-                    <img src="plumbing.jpg" alt="Plumbing Service">
-                    <p>Plumbing Service</p>
-                </a>
-            </div>
-            <div class="image-item">
-                <a href="dog-walkers.html">
-                    <img src="dog-walking.jpg" alt="Dog Walking Service">
-                    <p>Dog Walking Service</p>
-                </a>
-            </div>
-            <div class="image-item">
-                <a href="boxing-coaches.html">
-                    <img src="boxing-coach.jpg" alt="Boxing Coach Service">
-                    <p>Boxing Coach Service</p>
-                </a>
-            </div>
-            <div class="image-item">
-                <a href="hair-salons.html">
-                    <img src="hairsalon-booking.jpg" alt="Hair Salon Service">
-                    <p>Hair Salon Service</p>
-                </a>
-            </div>
-            <div class="image-item">
-                <a href="tutors.html">
-                    <img src="tutor.jpg" alt="Tutor Service">
-                    <p>Tutor Service</p>
-                </a>
-            </div>
+        <div class="category">
+            <a href="plumbers.html">
+                <img src="plumbing.jpg" alt="Plumbing Service">
+                <p>Plumbers</p>
+            </a>
         </div>
+        <div class="category">
+            <a href="dog-walkers.html">
+                <img src="dog-walking.jpg" alt="Dog Walking Service">
+                <p>Dog Walkers</p>
+            </a>
+        </div>
+        <div class="category">
+            <a href="tutors.html">
+                <img src="tutor.jpg" alt="Tutor Service">
+                <p>Tutors</p>
+            </a>
+        </div>
+        <!-- Add more categories as needed -->
     </section>
 
     <footer>
@@ -203,19 +171,19 @@
     <script>
         // JavaScript for filtering services based on search input
         const searchInput = document.getElementById('service-search');
-        const imageItems = document.querySelectorAll('.image-item');
+        const categoryLinks = document.querySelectorAll('.category a'); // Select all service links
 
         searchInput.addEventListener('input', function () {
             const searchTerm = searchInput.value.trim().toLowerCase();
-            imageItems.forEach(item => {
-                const serviceName = item.querySelector('p').textContent.toLowerCase();
-                const serviceLink = item.querySelector('a');
+
+            categoryLinks.forEach(link => {
+                const serviceName = link.querySelector('p').textContent.toLowerCase();
+                const category = link.closest('.category');
+
                 if (serviceName.includes(searchTerm)) {
-                    item.style.display = 'block';
-                    serviceLink.style.display = 'block';
+                    category.style.display = 'inline-block';
                 } else {
-                    item.style.display = 'none';
-                    serviceLink.style.display = 'none';
+                    category.style.display = 'none';
                 }
             });
         });
