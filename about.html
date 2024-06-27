@@ -65,9 +65,11 @@
         }
 
         .image-item {
-            flex: 0 1 30%; /* Adjust width as needed */
+            flex: 0 1 calc(30% - 20px); /* Adjust width as needed */
             margin-bottom: 20px;
             text-align: center;
+            box-sizing: border-box;
+            padding: 10px; /*Add padding for spacing between items */
         }
 
         .image-item img {
