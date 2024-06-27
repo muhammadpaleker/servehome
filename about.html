@@ -61,16 +61,16 @@
 
         .image-grid {
             display: flex;
-            justify-content: space-around;
+            justify-content: center; /* Center align images */
             align-items: center;
             flex-wrap: wrap;
-            margin-top: 5px;
+            margin-top: 10px; /* Adjust margin top */
+            gap: 10px; /* Gap between images */
         }
 
         .image-item {
-            flex: 0 1 30%; /* Adjust width as needed */
-            margin-bottom: 20px;
-            text-align: center;
+            flex: 0 1 calc(50% - 10px); /* Adjust width of images with gap */
+            margin-bottom: 10px; /* Adjust margin bottom */
         }
 
         .image-item img {
@@ -81,14 +81,14 @@
         }
 
         .image-item p {
-            margin-top: 2px; /* Adjust margin top to reduce space */
+            margin-top: 5px; /* Adjust margin top */
             font-weight: bold;
         }
 
         .about-text {
             font-size: 1.2em;
-            line-height: 1.8;
-            margin-bottom: 2px; /* Adjust margin bottom to reduce space */
+            line-height: 1.6; /* Adjust line height */
+            margin: 10px 0; /* Adjust margin top and bottom */
         }
 
         footer {
@@ -121,10 +121,7 @@
         <div class="about-text">
             <p>Welcome to our service booking platform, where finding reliable services is as easy as a few clicks. Similar to Uber Eats, our website offers a seamless experience for booking various services such as <strong>electricians</strong>, <strong>plumbers</strong>, <strong>dog walkers</strong>, and more. You can browse through available services, search for specific needs, and view detailed profiles of service providers, including their locations, availability, and customer reviews.</p>
         </div>
-    </section>
 
-    <section class="about-section">
-        <h2>Our Services</h2>
         <div class="image-grid">
             <div class="image-item">
                 <img src="electrician.jpg" alt="Electrician Service">
@@ -151,9 +148,7 @@
                 <p>Tutor Service</p>
             </div>
         </div>
-    </section>
 
-    <section class="about-section">
         <div class="about-text">
             <p>Once you find the right service provider, simply request their service and receive a quote promptly. Our platform is designed to connect you with trustworthy professionals efficiently, ensuring your needs are met with convenience and reliability.</p>
         </div>
