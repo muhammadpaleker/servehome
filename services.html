@@ -199,5 +199,26 @@
     <footer>
         <p>&copy; 2024 Your Company. All rights reserved.</p>
     </footer>
+
+    <script>
+        // JavaScript for filtering services based on search input
+        const searchInput = document.getElementById('service-search');
+        const imageItems = document.querySelectorAll('.image-item');
+
+        searchInput.addEventListener('input', function () {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            imageItems.forEach(item => {
+                const serviceName = item.querySelector('p').textContent.toLowerCase();
+                const serviceLink = item.querySelector('a');
+                if (serviceName.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    serviceLink.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                    serviceLink.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
