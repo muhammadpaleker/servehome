@@ -57,11 +57,34 @@
             margin-top: 80px; /* Adjust margin to account for fixed header */
         }
 
+        .find-service {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            color: #fff; /* White text color */
+            border-radius: 20px; /* Rounded corners */
+            padding: 20px; /* Padding inside the box */
+            max-width: 80%; /* 80% of the screen width */
+            margin: 0 auto; /* Center align horizontally */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+
+        .find-service h2 {
+            font-size: 2em; /* Adjust font size */
+            margin-bottom: 10px; /* Adjust spacing */
+        }
+
+        .find-service p {
+            font-size: 1.2em; /* Adjust font size */
+            line-height: 1.6; /* Adjust line height */
+        }
+
         .category-section {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 40px auto;
             padding: 40px 20px;
             text-align: center;
+            background-color: #fff; /* White background for categories */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            border-radius: 8px; /* Rounded corners */
         }
 
         .category {
@@ -114,9 +137,11 @@
     </header>
 
     <section class="hero">
-        <h2>Find Your Service</h2>
-        <p>Discover reliable services at your fingertips. Browse through electricians, plumbers, dog walkers, and more.</p>
-        <p>Easy to use and convenient. Start booking today!</p>
+        <div class="find-service">
+            <h2>Find Your Service</h2>
+            <p>Discover reliable services at your fingertips. Browse through electricians, plumbers, dog walkers, and more.</p>
+            <p>Easy to use and convenient. Start booking today!</p>
+        </div>
     </section>
 
     <section class="category-section">
