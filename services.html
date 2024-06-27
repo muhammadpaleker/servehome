@@ -142,7 +142,7 @@
         </div>
         
         <div class="image-grid">
-            <!-- First 6 service blocks -->
+            <!-- Service items (replace with actual links and images) -->
             <div class="image-item">
                 <a href="electrician.html">
                     <img src="electrician.jpg" alt="Electrician Service">
@@ -179,32 +179,29 @@
                     <p>Tutor Service</p>
                 </a>
             </div>
-            <!-- Placeholder for additional service blocks -->
-            <!-- Add placeholders with default images and names -->
-            <div class="image-item">
-                <a href="#">
-                    <img src="default-service.jpg" alt="Default Service">
-                    <p>Default Service</p>
-                </a>
-            </div>
-            <div class="image-item">
-                <a href="#">
-                    <img src="default-service.jpg" alt="Default Service">
-                    <p>Default Service</p>
-                </a>
-            </div>
-            <div class="image-item">
-                <a href="#">
-                    <img src="default-service.jpg" alt="Default Service">
-                    <p>Default Service</p>
-                </a>
-            </div>
-            <!-- Repeat the above block to create 30 blocks in total -->
         </div>
     </section>
 
     <footer>
         <p>&copy; 2024 Your Company. All rights reserved.</p>
     </footer>
+
+    <script>
+        // JavaScript for filtering services based on search input
+        const searchInput = document.getElementById('service-search');
+        const imageItems = document.querySelectorAll('.image-item');
+
+        searchInput.addEventListener('input', function () {
+            const searchTerm = searchInput.value.toLowerCase();
+            imageItems.forEach(item => {
+                const serviceName = item.querySelector('p').textContent.toLowerCase();
+                if (serviceName.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
