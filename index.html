@@ -9,14 +9,14 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #fff; /* White background for the entire page */
-            color: #000; /* Black text color */
+            background-color: #f0f0f0; /* Light grey background */
+            color: #333; /* Dark text color */
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #000; /* Black header background */
+            background-color: #1dbf73; /* Fiverr green */
             color: #fff; /* White text color */
             padding: 20px 0; /* Padding based on text size */
             width: 100%; /* Span the entire width of the page */
@@ -50,40 +50,42 @@
         }
 
         .hero {
-            background-color: #f4f4f4; /* Light grey background for the hero section */
-            padding: 0;
+            background-color: #fff; /* White background for the hero section */
+            padding: 100px 20px; /* Adjust padding top and bottom */
             text-align: center;
             margin-top: 80px; /* Adjust margin to account for fixed header */
-            overflow: hidden; /* Hide overflow to prevent horizontal scrollbar */
         }
 
-        .slideshow-container {
-            position: relative;
-            width: 100%;
-            height: 100vh; /* Full viewport height */
-            overflow: hidden;
+        .category-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
         }
 
-        .mySlides {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensure the image covers the entire container */
+        .category {
+            display: inline-block;
+            margin: 0 10px;
+            text-align: center;
+            width: 30%; /* Adjust width as needed */
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            border-radius: 8px;
+            transition: transform 0.3s ease;
         }
 
-        .slide-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 2em;
-    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
-    padding: 20px; /* Padding inside the overlay */
-    width: 60%; /* Adjust width as needed */
-    text-align: center; /* Center align text */
-    font-family: Arial, sans-sarif; /* Change font family */
+        .category:hover {
+            transform: translateY(-5px); /* Lift up on hover */
         }
+
+        .category img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
         footer {
             text-align: center;
             padding: 10px 0;
@@ -109,57 +111,44 @@
             </ul>
         </nav>
     </header>
+
     <section class="hero">
-        <div class="slideshow-container">
-            <div class="mySlides">
-                <img src="electrician.jpg" alt="Electrician Service">
-                <div class="slide-text">
-                    <p>Discover reliable services at your fingertips. Browse through electricians, plumbers, dog walkers, and more.</p>
-                    <p>Easy to use and convenient. Start booking today!</p>
-                </div>
-            </div>
-            <div class="mySlides">
-                <img src="plumbing.jpg" alt="Plumbing Service">
-                <div class="slide-text">
-                    <p>Professional plumbing services tailored to your needs.</p>
-                    <p>Book now and solve your plumbing issues with ease.</p>
-                </div>
-            </div>
-            <div class="mySlides">
-                <img src="dog-walking.jpg" alt="Dog Walking Service">
-                <div class="slide-text">
-                    <p>Need a reliable dog walker? Find the best in your area.</p>
-                    <p>Book a dog walking service today!</p>
-                </div>
-            </div>
-            <!-- Add more images as needed -->
-        </div>
+        <h2>Find Your Service</h2>
+        <p>Discover reliable services at your fingertips. Browse through electricians, plumbers, dog walkers, and more.</p>
+        <p>Easy to use and convenient. Start booking today!</p>
     </section>
+
+    <section class="category-section">
+        <h2>Popular Categories</h2>
+        <div class="category">
+            <a href="electricians.html">
+                <img src="electrician.jpg" alt="Electrician Service">
+                <p>Electricians</p>
+            </a>
+        </div>
+        <div class="category">
+            <a href="plumbers.html">
+                <img src="plumbing.jpg" alt="Plumbing Service">
+                <p>Plumbers</p>
+            </a>
+        </div>
+        <div class="category">
+            <a href="dog-walkers.html">
+                <img src="dog-walking.jpg" alt="Dog Walking Service">
+                <p>Dog Walkers</p>
+            </a>
+        </div>
+        <div class="category">
+            <a href="tutors.html">
+                <img src="tutor.jpg" alt="Tutor Service">
+                <p>Tutors</p>
+            </a>
+        </div>
+        <!-- Add more categories as needed -->
+    </section>
+
     <footer>
         <p>&copy; 2024 Your Company. All rights reserved.</p>
     </footer>
-
-    <script>
-        var slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            var slides = document.querySelectorAll('.mySlides');
-
-            for (var i = 0; i < slides.length; i++) {
-                slides[i].style.display = 'none';  // Hide all slides
-            }
-
-            slideIndex++;
-
-            if (slideIndex > slides.length) {
-                slideIndex = 1;  // Reset to the first slide after the last one
-            }
-
-            slides[slideIndex - 1].style.display = 'block';  // Display the current slide
-
-            setTimeout(showSlides, 4000); // Change image every 4 seconds
-        }
-    </script>
 </body>
 </html>
