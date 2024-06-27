@@ -59,6 +59,22 @@
             text-align: center;
         }
 
+        .search-section {
+            margin-bottom: 20px;
+            font-size: 0.75em; /* Half the font size of h2 */
+        }
+
+        .search-section label {
+            font-size: 1.5em; /* Same font size as h2 */
+            margin-right: 10px; /* Add space between label and input */
+        }
+
+        .search-section input[type="text"] {
+            padding: 5px; /* Adjust input padding */
+            width: 200px; /* Adjust input width */
+            font-size: 1em; /* Adjust font size */
+        }
+
         .image-grid {
             display: flex;
             justify-content: space-around;
@@ -119,7 +135,12 @@
     </header>
 
     <section class="services-section">
-        <h2>Our Services</h2>
+        <h2>Services</h2>
+        <div class="search-section">
+            <label for="service-search">Search:</label>
+            <input type="text" id="service-search" name="service-search" placeholder="Search for services...">
+        </div>
+        
         <div class="image-grid">
             <!-- First 6 service blocks -->
             <div class="image-item">
