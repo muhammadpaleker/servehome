@@ -88,6 +88,7 @@
             margin-bottom: 20px;
             text-align: center;
             cursor: pointer; /* Add pointer cursor for clickable items */
+            position: relative; /* Position relative for absolute positioning of text */
         }
 
         .image-item img {
@@ -98,10 +99,21 @@
         }
 
         .image-item p {
-            margin-top: 2px; /* Adjust margin top to reduce space */
-            font-weight: bold;
+            position: absolute; /* Position absolute for text positioning */
+            bottom: 10px; /* Adjust vertical positioning as needed */
+            left: 0;
+            right: 0;
             color: #fff; /* Set text color to white */
-            text-decoration: none; /* Remove underline */
+            font-size: 1.2em; /* Adjust font size */
+            font-weight: bold; /* Apply bold font weight */
+            margin: 0; /* Remove default margin */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for contrast */
+            padding: 5px 10px; /* Adjust padding as needed */
+            text-align: center; /* Center align text */
+        }
+
+        .image-item:hover p {
+            background-color: rgba(0, 0, 0, 0.8); /* Darken background on hover */
         }
 
         .about-text {
@@ -187,23 +199,5 @@
     <footer>
         <p>&copy; 2024 Your Company. All rights reserved.</p>
     </footer>
-
-    <script>
-        // JavaScript for filtering services based on search input
-        const searchInput = document.getElementById('service-search');
-        const imageItems = document.querySelectorAll('.image-item');
-
-        searchInput.addEventListener('input', function () {
-            const searchTerm = searchInput.value.toLowerCase();
-            imageItems.forEach(item => {
-                const serviceName = item.querySelector('p').textContent.toLowerCase();
-                if (serviceName.includes(searchTerm)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
