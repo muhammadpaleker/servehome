@@ -31,7 +31,7 @@
         }
 
         header h1 {
-            font-size: 1.5em; /* Adjust font size */
+            font-size: 2em; /* Adjust font size */
             margin: 0; /* Remove default margin */
         }
 
@@ -59,43 +59,32 @@
             text-align: center;
         }
 
-        .search-section {
-            margin-bottom: 20px;
-            font-size: 0.75em; /* Half the font size of h2 */
-        }
-
-        .search-section label {
-            font-size: 1.5em; /* Same font size as h2 */
-            margin-right: 10px; /* Add space between label and input */
-        }
-
-        .search-section input[type="text"] {
-            padding: 5px; /* Adjust input padding */
-            width: 200px; /* Adjust input width */
-            font-size: 1em; /* Adjust font size */
-        }
-
         .image-grid {
             display: flex;
             justify-content: space-around;
             align-items: center;
             flex-wrap: wrap;
-            margin-top: 5px;
+            margin-top: 20px;
         }
 
         .image-item {
-            flex: 0 1 30%; /* Adjust width as needed */
-            margin-bottom: 20px;
+            flex: 0 1 calc(33.33% - 20px); /* Adjust width with margin between items */
+            margin: 10px; /* Adjust margin between items */
             text-align: center;
             cursor: pointer; /* Add pointer cursor for clickable items */
             position: relative; /* Position relative for absolute positioning of text */
+            overflow: hidden; /* Hide overflow for consistent image sizes */
         }
 
         .image-item img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-item:hover img {
+            transform: scale(1.1); /* Scale up image on hover */
         }
 
         .image-item p {
@@ -110,16 +99,12 @@
             background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for contrast */
             padding: 5px 10px; /* Adjust padding as needed */
             text-align: center; /* Center align text */
+            opacity: 0; /* Initially hide text */
+            transition: opacity 0.3s ease; /* Smooth transition for opacity */
         }
 
         .image-item:hover p {
-            background-color: rgba(0, 0, 0, 0.8); /* Darken background on hover */
-        }
-
-        .about-text {
-            font-size: 1.2em;
-            line-height: 1.8;
-            margin-bottom: 2px; /* Adjust margin bottom to reduce space */
+            opacity: 1; /* Show text on hover */
         }
 
         footer {
