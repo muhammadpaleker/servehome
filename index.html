@@ -202,5 +202,25 @@
     <footer>
         <p>&copy; 2024 Your Company. All rights reserved.</p>
     </footer>
+    <script>
+        // JavaScript for filtering services based on search input
+        const searchInputHome = document.getElementById('service-search-home');
+        const imageItemsHome = document.querySelectorAll('.image-item');
+
+        searchInputHome.addEventListener('input', function () {
+            const searchTermHome = searchInputHome.value.trim().toLowerCase();
+            imageItemsHome.forEach(item => {
+                const serviceNameHome = item.querySelector('p').textContent.toLowerCase();
+                const serviceLinkHome = item.querySelector('a');
+                if (serviceNameHome.includes(searchTermHome)) {
+                    item.style.display = 'block';
+                    serviceLinkHome.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                    serviceLinkHome.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
