@@ -50,9 +50,37 @@
         }
 
         .about-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
             text-align: center;
-            padding: 50px 20px;
-            margin-top: 100px; /* Adjust margin to account for fixed header */
+        }
+
+        .image-grid {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .image-item {
+            flex: 0 1 30%; /* Adjust width as needed */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .image-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-item p {
+            margin-top: 10px;
+            font-weight: bold;
+
         }
 
         .about-text {
@@ -91,6 +119,23 @@
             <p>Welcome to our service booking platform, where finding reliable services is as easy as a few clicks. Similar to Uber Eats, our website offers a seamless experience for booking various services such as <strong>electricians</strong>, <strong>plumbers</strong>, <strong>dog walkers</strong>, and more. You can browse through available services, search for specific needs, and view detailed profiles of service providers, including their locations, availability, and customer reviews.</p>
 
             <p>Once you find the right service provider, simply request their service and receive a quote promptly. Our platform is designed to connect you with trustworthy professionals efficiently, ensuring your needs are met with convenience and reliability.</p>
+        </div>
+    </section>
+    <section class="about-section">
+        <h2>Our Services</h2>
+        <div class="image-grid">
+            <div class="image-item">
+                <img src="electrician.jpg" alt="Electrician Service">
+                <p>Electrician Service</p>
+            </div>
+            <div class="image-item">
+                <img src="plumbing.jpg" alt="Plumbing Service">
+                <p>Plumbing Service</p>
+            </div>
+            <div class="image-item">
+                <img src="dog-walking.jpg" alt="Dog Walking Service">
+                <p>Dog Walking Service</p>
+            </div>
         </div>
     </section>
 
