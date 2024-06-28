@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electricians - Service Booking</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your existing CSS file -->
     <style>
         /* Basic styling (use your existing CSS) */
         body {
@@ -45,13 +46,12 @@
         header h1 {
             font-size: 1.5em; /* Adjust font size */
             margin: 0; /* Remove default margin */
-            display: inline-block; /* Prevent logo overlap */
-            vertical-align: middle; /* Align with logo */
+            display: block; /* Prevent logo overlap */
+            margin-bottom: 10px; /* Add margin bottom to create space */
         }
 
         header nav {
-            float: right; /* Float navigation to the right */
-            margin-right: 20px; /* Adjust margin for spacing */
+            text-align: center; /* Center align navigation links */
         }
 
         header nav ul {
@@ -110,6 +110,14 @@
             bottom: 0; /* Position at the bottom of the viewport */
             width: 100%; /* Span the entire width of the viewport */
             left: 0; /* Align left */
+        }
+
+        @media screen and (max-width: 768px) {
+            /* Adjustments for smaller screens if needed */
+        }
+
+        @media screen and (max-width: 480px) {
+            /* Adjustments for mobile screens if needed */
         }
     </style>
 </head>
