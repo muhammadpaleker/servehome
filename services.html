@@ -34,6 +34,17 @@
             margin: 0; /* Remove default margin */
         }
 
+        header nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header nav img {
+            height: 40px; /* Adjust height of logo */
+            margin-right: 20px; /* Space between logo and text */
+        }
+
         header nav ul {
             list-style-type: none; /* Remove default list styles */
             margin: 0;
@@ -144,8 +155,9 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Service Booking</h1>
         <nav>
+            <img src="quickserve.png" alt="Service Booking Logo">
+            <h1>Welcome to Service Booking</h1>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
