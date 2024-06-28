@@ -21,7 +21,6 @@
             color: #333; /* Dark text color */
             padding: 20px 0; /* Padding based on text size */
             width: 100%; /* Span the entire width of the page */
-            text-align: center; /* Center align text */
             position: fixed; /* Fixed position to stay on top */
             z-index: 1000; /* Ensure header is above other content */
             top: 0; /* Position at the top of the viewport */
@@ -29,20 +28,22 @@
             border-bottom: 1px solid #ddd; /* Grey border bottom */
         }
 
+        header .logo {
+            position: absolute; /* Position logo absolutely */
+            left: 20px; /* Align left with padding */
+            top: 20px; /* Align top with padding */
+            height: 40px; /* Adjust height of logo */
+        }
+
         header h1 {
             font-size: 1.5em; /* Adjust font size */
             margin: 0; /* Remove default margin */
+            text-align: center; /* Center align text */
         }
 
         header nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        header nav img {
-            height: 40px; /* Adjust height of logo */
-            margin-right: 20px; /* Space between logo and text */
+            text-align: center; /* Center align text */
+            margin-top: 10px; /* Space between heading and nav */
         }
 
         header nav ul {
@@ -155,9 +156,9 @@
 </head>
 <body>
     <header>
+        <img src="logo.png" alt="Service Booking Logo" class="logo">
+        <h1>Welcome to Service Booking</h1>
         <nav>
-            <img src="quickserve.png" alt="Service Booking Logo">
-            <h1>Welcome to Service Booking</h1>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
