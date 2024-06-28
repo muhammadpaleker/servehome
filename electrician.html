@@ -28,28 +28,30 @@
             top: 0; /* Position at the top of the viewport */
             left: 0; /* Align left */
             border-bottom: 1px solid #ccc; /* Example border style */
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Space items evenly */
+            align-items: center; /* Center items vertically */
         }
 
         .logo-container {
-            position: absolute; /* Position logo within header */
-            left: 20px; /* Adjust as needed */
-            top: 50%; /* Align vertically */
-            transform: translateY(-50%); /* Center vertically */
+            margin-left: 20px; /* Adjust margin for spacing */
+            flex: 0 0 auto; /* Don't grow or shrink */
         }
 
         header img.logo {
-            height: 60px; /* Adjust height of logo */
+            height: 80px; /* Adjust height of logo */
             vertical-align: middle; /* Align logo vertically */
         }
 
         header h1 {
             font-size: 1.5em; /* Adjust font size */
             margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
+            flex: 1; /* Take remaining space */
         }
 
         header nav {
-            margin-top: 10px; /* Adjust top margin for spacing */
+            margin: 0 auto; /* Center align navigation */
+            flex: 1; /* Take remaining space */
         }
 
         header nav ul {
