@@ -13,14 +13,13 @@
             color: #000; /* Black text color */
             margin: 0;
             padding: 0;
-            padding-top: 80px; /* Adjust padding top to accommodate fixed header height */
-            padding-bottom: 60px; /* Adjust padding bottom to accommodate fixed footer height */
+            padding-top: 120px; /* Adjust padding top to accommodate fixed header height */
             overflow-x: hidden; /* Hide horizontal scrollbar */
         }
 
         header {
-            background-color: #000; /* Black header background */
-            color: #fff; /* White text color */
+            background-color: #fff; /* White header background */
+            color: #000; /* Black text color */
             padding: 20px 0; /* Padding based on text size */
             width: 100%; /* Span the entire width of the page */
             text-align: center; /* Center align text */
@@ -28,12 +27,24 @@
             z-index: 1000; /* Ensure header is above other content */
             top: 0; /* Position at the top of the viewport */
             left: 0; /* Align left */
-            border-bottom: 1px solid #333; /* Dark border bottom */
+            border-bottom: 1px solid #ccc; /* Example border style */
+        }
+
+        header .logo-container {
+            float: left; /* Float logo to the left */
+            margin-left: 20px; /* Adjust margin for spacing */
         }
 
         header h1 {
             font-size: 1.5em; /* Adjust font size */
             margin: 0; /* Remove default margin */
+            display: inline-block; /* Prevent logo overlap */
+            vertical-align: middle; /* Align with logo */
+        }
+
+        header nav {
+            float: right; /* Float navigation to the right */
+            margin-right: 20px; /* Adjust margin for spacing */
         }
 
         header nav ul {
@@ -48,7 +59,7 @@
         }
 
         header nav ul li a {
-            color: #fff; /* White text color for links */
+            color: #000; /* Black text color for links */
             text-decoration: none; /* Remove underline from links */
             font-size: 1.2em; /* Adjust font size */
         }
