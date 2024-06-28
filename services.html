@@ -26,23 +26,30 @@
             top: 0; /* Position at the top of the viewport */
             left: 0; /* Align left */
             border-bottom: 1px solid #ddd; /* Grey border bottom */
+            display: flex; /* Use flexbox for alignment */
+            flex-direction: column; /* Stack children vertically */
+            align-items: center; /* Center align children */
         }
 
-        header .logo {
+        .logo-container {
+            display: flex;
+            align-items: center;
             position: absolute; /* Position logo absolutely */
             left: 20px; /* Align left with padding */
             top: 20px; /* Align top with padding */
-            height: 40px; /* Adjust height of logo */
+            height: 100px; /* Adjust height to span both lines */
+        }
+
+        header img.logo {
+            height: 100%; /* Adjust height of logo to span both lines */
         }
 
         header h1 {
             font-size: 1.5em; /* Adjust font size */
             margin: 0; /* Remove default margin */
-            text-align: center; /* Center align text */
         }
 
         header nav {
-            text-align: center; /* Center align text */
             margin-top: 10px; /* Space between heading and nav */
         }
 
@@ -50,6 +57,7 @@
             list-style-type: none; /* Remove default list styles */
             margin: 0;
             padding: 0;
+            text-align: center; /* Center align text */
         }
 
         header nav ul li {
@@ -156,16 +164,18 @@
 </head>
 <body>
     <header>
-        <img src="quickserve.png" alt="Service Booking Logo" class="logo">
-            <h1>Welcome to Service Booking</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="bookings.html">Bookings</a></li>
-                </ul>
-            </nav>
+        <div class="logo-container">
+            <img src="quickserve.png" alt="Service Booking Logo" class="logo">
+        </div>
+        <h1>Welcome to Service Booking</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="bookings.html">Bookings</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div class="search-bar">
