@@ -9,17 +9,16 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #fff; /* White background for the entire page */
-            color: #000; /* Black text color */
+            background-color: #f0f0f0; /* Light grey background */
+            color: #333; /* Dark text color */
             margin: 0;
             padding: 0;
-            padding-top: 120px; /* Adjust padding top to accommodate fixed header height */
-            overflow-x: hidden; /* Hide horizontal scrollbar */
+            padding-bottom: 50px; /* Ensure content doesn't hide behind footer */
         }
 
         header {
             background-color: #fff; /* White header background */
-            color: #000; /* Black text color */
+            color: #333; /* Black text color */
             padding: 20px 0; /* Padding based on text size */
             width: 100%; /* Span the entire width of the page */
             text-align: center; /* Center align text */
@@ -30,9 +29,17 @@
             border-bottom: 1px solid #ccc; /* Example border style */
         }
 
-        header .logo-container {
-            float: left; /* Float logo to the left */
-            margin-left: 20px; /* Adjust margin for spacing */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            position: absolute; /* Position logo absolutely */
+            left: 20px; /* Align left with padding */
+            top: 20px; /* Align top with padding */
+            height: 100px; /* Adjust height to span both lines */
+        }
+
+        header img.logo {
+            height: 100%; /* Adjust height of logo to span both lines */
         }
 
         header h1 {
